@@ -1,0 +1,17 @@
+#main-body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../images/back.jpg");
+  background-position: center;
+  background-size: cover;
+  display: block;
+  z-index: -1; }
+
+#brand {
+  margin: 15px;
+  margin-bottom: 7px;
+  font-family: cursive;
+  color: #ecd5d5; }
+
+a:active {
+  color: black; }

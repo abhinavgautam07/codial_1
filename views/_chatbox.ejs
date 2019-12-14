@@ -1,0 +1,19 @@
+<%if(locals.user){%>
+    <link rel="stylesheet" href="/css/chatbox.css">
+    <div id="chatbox">
+        <div id="chat-screen">
+            <ul type="none" id="chat-list">
+                <li class="other-message"><span>other-message</span></li>
+                <li class="self-message"><span>self-message</span></li>
+            </ul>
+        </div>
+        <div>
+            <input type="text" name="message" id="message-content" placeholder="start writing here...">
+            <button type="submit" class="btn btn-success" id="send-button"><i class="fas fa-share-square"></i></button>
+        </div>
+
+
+
+    </div>
+    <%}%>
+        <script src="https://kit.fontawesome.com/a8a9b356fd.js" crossorigin="anonymous"></script>

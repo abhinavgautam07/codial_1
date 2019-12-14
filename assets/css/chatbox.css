@@ -1,0 +1,38 @@
+#chatbox {
+  height: 289px;
+  border: 1px solid #dcdcdc;
+  position: fixed;
+  top: 23.5rem;
+  left: 70rem; }
+
+#chat-screen {
+  overflow-y: scroll;
+  height: 87%;
+  border-bottom: 1px solid #dcdcdc; }
+
+.other-message {
+  font-family: cursive;
+  height: fit-content;
+  background-color: palevioletred;
+  color: black;
+  width: 119px;
+  padding: 2%;
+  margin-left: -17%;
+  margin-top: 7%; }
+
+.self-message {
+  font-family: cursive;
+  height: fit-content;
+  background-color: skyblue;
+  color: black;
+  width: 119px;
+  padding: 3%;
+  margin-left: 26%;
+  margin-top: 11%; }
+
+#send-button {
+  color: white;
+  height: 2rem;
+  font-size: 80%;
+  margin-top: -6px;
+  margin-left: -5px; }

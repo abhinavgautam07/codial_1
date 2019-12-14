@@ -1,0 +1,9 @@
+label {
+  padding: 10px;
+  background: red;
+  display: table;
+  color: #fff;
+  margin-top: 0.7rem; }
+
+input[type="file"] {
+  display: none; }

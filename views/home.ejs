@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/home.css">
+<main id="main">
+    <button type="button" class="btn btn-dark btn-sm"><a href="/users/sign-in">Sign In</a></button>
+    <button type="button" class="btn btn-dark btn-sm"><a href="/users/sign-up">Sign Up</a></button>
+
+
+    <section id="feed-posts">
+        <h4>Posts</h4>
+        <% if(locals.user){%>
+            <form action="/posts/create" id="new-post-form" method="POST" enctype="multipart/form-data">
+                <textarea name="postContent" required rows="3" cols="30" placeholder="What's on your mind..."></textarea>
+                <label for="post-pic">
+          <input type="file" name="post-image" id="post-pic">
+        </label>
+                <button type="submit">Post</button>
+            </form>
+
+            <%}%>
+                <div id="post-list-container">
+                    <ul>
+
+                        <% for(post of posts){%>
+
+                            <%- include('_post'); %>
+
+                                <%}%>
+                    </ul>
+                </div>
+    </section>
+</main>
+
+<aside id="aside">
+    <%if(locals.user){%>
+        <section id="user-friends">
+            <h4>Friends</h4>
+
+            <%if(friends.length==0){%>
+                <center> <b>No friends to show</b></center>
+                <%}else {%>
+                    <ul>
+                        <%for(f of friends){%>
+                            <li>
+                                <a href="/users/profile/<%=f._id %>">
+                                    <%=f.name%>
+                                </a>
+                            </li>
+
+                            <%}%>
+                    </ul>
+                    <%}%>
+
+        </section>
+        <%}%>
+            <section id="all-users">
+                <h4>Users</h4>
+                <ul>
+                    <% for(u of all_users){%>
+                        <li>
+                            <a href="/users/profile/<%=u._id %>">
+                                <%=u.name %>
+                            </a>
+                        </li>
+
+                        <%} %>
+                </ul>
+            </section>
+            <div>
+                <%- include('_chatbox'); %>
+            </div>
+</aside>
+
+<script type="text/javascript" src="/js/home_posts.js">
+</script>
+<script type="text/javascript" src="/js/likes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<%if(locals.user){%>
+
+    <script>
+        new ChatEngine('chatbox', '<%=locals.user.email%>');
+    </script>
+    <%}%>

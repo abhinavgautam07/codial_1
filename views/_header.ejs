@@ -1,0 +1,28 @@
+<header>
+  <ul style="display:inline-block">
+<% if(locals.user)
+{%> 
+  <li>
+<%= user.name %>
+  </li>
+  <li>
+  <a href="/users/sign-out">Sign Out</a>
+</li>
+  
+  <%}else{%>
+    <li>
+      <a href="/users/sign-in">sign In</a>
+    </li>
+    <li>
+        <a href="/users/sign-up">sign Up</a>
+      </li>
+    
+    
+    <%}
+
+
+
+%>
+</ul>
+
+</header>
