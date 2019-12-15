@@ -4,6 +4,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 // const routes = require('./routes/index');
 const app = express();
+require('./config/views-helper')(app);
 //express does not create session by itself  express-session(it is a middleware)does that
 const layouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -36,7 +37,7 @@ if (env.name == 'development') {
         prefix: '/css'
     }));
 }
-
+console.log(process.env.CODIAL_ASSET_PATH, "hhh", path.join(__dirname, env.asset_path));
 app.use(express.static(path.join(__dirname, env.asset_path)));
 
 app.use(layouts);

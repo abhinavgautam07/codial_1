@@ -1,43 +1,43 @@
-<link rel="stylesheet" href="/css/profile_page.css">
+<link rel="stylesheet" href="<%=locals.asset_path('css/profile_page.css')">
 <%if(locals.profile_user.avatar){%>
-  <img src="<%=profile_user.avatar%>" id="update-image" alt="<%=profile_user.name%>"style="width:100px;height:100px">
+    <img src="<%=profile_user.avatar%>" id="update-image" alt="<%=profile_user.name%>" style="width:100px;height:100px">
 
-  <%} else {%>
-    <img src="/images/download.jpg"  alt="<%=profile_user.name%>"style="width:100px;height:100px">
-    <b><i>please upload profile image</i></b>
-    <%}
+    <%} else {%>
+        <img src="<%locals.asset_path('images/download.jpg')%>" alt="<%=profile_user.name%>" style="width:100px;height:100px">
+        <b><i>please upload profile image</i></b>
+        <%}
   
   
   %>
 
-<% if(locals.user.id==profile_user.id) {%> 
-  <!-- if user matches show update form   -->
+            <% if(locals.user.id==profile_user.id) {%>
+                <!-- if user matches show update form   -->
 
-  <!-- Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form. -->
-  <img id="blah" src="#" alt="your image" />
-    <form action="/users/update/<%=profile_user.id %>" method="POST" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="your name" value="<%=profile_user.name %>" required>
-    <input type="email" name="email" placeholder="your email" value="<%=profile_user.email%>" readonly>
-    <label for="pp">upload pic
+                <!-- Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form. -->
+                <img id="blah" src="#" alt="your image" />
+                <form action="/users/update/<%=profile_user.id %>" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" placeholder="your name" value="<%=profile_user.name %>" required>
+                    <input type="email" name="email" placeholder="your email" value="<%=profile_user.email%>" readonly>
+                    <label for="pp">upload pic
       <input type="file" name="avatar" id="pp"placeholder="Profile-picture">
     </label>
-   <br>
-   <br>
-    <button type="submit">submit</button>
-    
-    </form>  
-  <%} else {%> 
-    <!-- else  show only details -->
-    <ul>
-      <li>
-        <%=profile_user.email%>
-      </li>
-      <li>
-        <%=profile_user.name%>
-      </li>
-      </ul>
-       <!-- send post request with the button information it will contain will be id of the user to whome request will be sent -->
-    <button type="button"id="addFriend-<%=profile_user._id%>" class="friendship-button">
+                    <br>
+                    <br>
+                    <button type="submit">submit</button>
+
+                </form>
+                <%} else {%>
+                    <!-- else  show only details -->
+                    <ul>
+                        <li>
+                            <%=profile_user.email%>
+                        </li>
+                        <li>
+                            <%=profile_user.name%>
+                        </li>
+                    </ul>
+                    <!-- send post request with the button information it will contain will be id of the user to whome request will be sent -->
+                    <button type="button" id="addFriend-<%=profile_user._id%>" class="friendship-button">
      
         <%if(locals.already_friend){%>
       Remove
@@ -46,15 +46,15 @@
            Add as Friend
             <%}%>
     </button>
-    
-    <%}
+
+                    <%}
   
   
   %>
-  <script  type="text/javascript" src="/js/preview_update.js"></script>
-  <script type="text/javascript"src="/js/make_friendship.js">
-  </script>
-  <script>
-   let toggler=$('.friendship-button');
- new MakeFriendship(toggler);
-  </script>
+                        <script type="text/javascript" src="<%=locals.asset_path('js/preview_update.js')%>"></script>
+                        <script type="text/javascript" src="<%=locals.asset_path('js/make_friendship.js')%>">
+                        </script>
+                        <script>
+                            let toggler = $('.friendship-button');
+                            new MakeFriendship(toggler);
+                        </script>

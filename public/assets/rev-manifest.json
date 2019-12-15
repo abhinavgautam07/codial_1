@@ -10,5 +10,13 @@
   "images/download.jpg": "images/download-800baf1396.jpg",
   "images/nasa-Q1p7bh3SHj8-unsplash.jpg": "images/nasa-Q1p7bh3SHj8-unsplash-09dcd4085b.jpg",
   "images/paklenica-summer-evening-52-1.jpg": "images/paklenica-summer-evening-52-1-55edc882fb.jpg",
-  "images/—Pngtree—blue tech starry sky map_968568.png": "images/—Pngtree—blue tech starry sky map_968568-56eb7714ef.png"
+  "images/—Pngtree—blue tech starry sky map_968568.png": "images/—Pngtree—blue tech starry sky map_968568-56eb7714ef.png",
+  "js/app.js": "js/app-1a806f056e.js",
+  "js/bg.js": "js/bg-661772d05d.js",
+  "js/chat_engine.js": "js/chat_engine-e239a99bbe.js",
+  "js/home_posts.js": "js/home_posts-32c888bfed.js",
+  "js/likes.js": "js/likes-258099703a.js",
+  "js/make_friendship.js": "js/make_friendship-2ace654367.js",
+  "js/post_comments.js": "js/post_comments-e8b09ec150.js",
+  "js/preview_update.js": "js/preview_update-4ba121c537.js"
 }
