@@ -1,0 +1,1 @@
+function readURL(e){if(e.file){console.log(e.file);var a=new FileReader;a.onload=function(e){console.log("event is",e),$("#blah").attr("src",e.target.result)},a.readAsDataURL(e.file)}}console.log("this page is loaded"),$("#update-image").change((function(){console.log("he has changed"),readURL(this)}));

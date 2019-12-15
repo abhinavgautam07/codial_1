@@ -1,5 +1,5 @@
 const User = require('../../../models/users_schema');
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); //library for creating a jwt token at the time of login
 const env = require('../../../config/environment');
 module.exports.createSession = async function(req, res) {
     try {

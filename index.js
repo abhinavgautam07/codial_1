@@ -1,5 +1,6 @@
 const express = require('express');
 const env = require('./config/environment');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 // const routes = require('./routes/index');
 const app = express();
@@ -25,14 +26,17 @@ const path = require('path');
 app.use(cookieParser());
 
 app.use(express.urlencoded());
-app.use(sassMiddleware({
+if (env.name == 'development') {
+    app.use(sassMiddleware({
 
-    src: path.join(__dirname, env.asset_path, 'scss'),
-    dest: path.join(__dirname, env.asset_path, 'css'),
-    debug: true,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+        src: path.join(__dirname, env.asset_path, 'scss'),
+        dest: path.join(__dirname, env.asset_path, 'css'),
+        debug: true,
+        outputStyle: 'extended',
+        prefix: '/css'
+    }));
+}
+
 app.use(express.static(path.join(__dirname, env.asset_path)));
 
 app.use(layouts);
@@ -44,6 +48,7 @@ app.use(layouts);
 // but second one tells tha if you require any static fiel within the /uploads rote look in uploads
 
 app.use('/uploads', express.static('./uploads'));
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
