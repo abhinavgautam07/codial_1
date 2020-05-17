@@ -28,6 +28,7 @@ const path = require('path');
 app.use(cookieParser());
 
 app.use(express.urlencoded());
+console.log(env.name);
 if (env.name == 'development') {
     app.use(sassMiddleware({
 
