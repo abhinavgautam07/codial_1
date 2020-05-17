@@ -12,6 +12,7 @@ module.exports.index= async (req,res)=>{
       path: 'user'
     }
   });
+  res.set('Access-Control-Allow-Origin', '*')
   return res.json(200,{
     message: "list of posts",
     posts:posts

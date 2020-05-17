@@ -35,7 +35,11 @@ const postSchema = new mongoose.Schema({
 
 
   });
-
+  // Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form.
+  // fieldname:Field name specified in the form
+  // filename:The name of the file within the destination 
+//   .single(fieldname)
+// Accept a single file with the name fieldname. The single file will be stored in req.file.	
   const storage=multer.diskStorage({
     destination:function (req,file,cb){
       cb(null, path.join(__dirname,'..',IMAGE_PATH));

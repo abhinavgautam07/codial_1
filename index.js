@@ -2,6 +2,7 @@ const express = require('express');
 const env = require('./config/environment');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
+const dum=require('./models/users_schema');
 // const routes = require('./routes/index');
 const app = express();
 require('./config/views-helper')(app);

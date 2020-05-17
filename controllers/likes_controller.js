@@ -20,6 +20,11 @@ try{
       likeable:req.query.id,
       onModel:req.query.Type
     });
+    console.log("debuddddddddddddddddddd",{
+      user: req.user._id,
+      likeable: req.query.id,
+      onModel: req.query.Type
+  });
     if(exsistingLike){
       deleted=true;
       likeable.likes.pull(exsistingLike._id);
@@ -31,6 +36,7 @@ try{
         likeable:req.query.id,
         onModel:req.query.Type
       });
+      console.log(newLike);
       likeable.likes.push(newLike._id);
       likeable.save();
     }

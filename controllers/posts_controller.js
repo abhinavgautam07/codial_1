@@ -3,9 +3,11 @@ const Comment = require('../models/comments');
 const User = require('../models/users_schema');
 const fs = require('fs');
 const path = require('path');
-module.exports.create = async function(req, res) {
-    try {
-        await Post.postImage(req, res, async function(err) {
+module.exports.create = function (req, res) {
+    async function post(err) {
+        try {
+            console.log(req.body);
+            console.log(req.file);
             if (err) {
                 console.log("multer error", err);
             }
@@ -33,19 +35,18 @@ module.exports.create = async function(req, res) {
                 });
             }
             return res.redirect('back');
-        });
-
-
-
-    } catch (err) {
-        console.log('Error', err);
-        return res.redirect('back');
-
+        } catch (err) {
+            console.log(err);
+            return;
+        }
     }
+    Post.postImage(req, res, post);
+
+
 
 }
 
-module.exports.destroy = async function(req, res) {
+module.exports.destroy = async function (req, res) {
 
     try {
         let post = await Post.findById(req.params.id);
