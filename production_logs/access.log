@@ -441,3 +441,4 @@
 ::1 - - [17/May/2020:08:55:56 +0000] "POST /comments/create HTTP/1.1" 200 298 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
 ::1 - - [17/May/2020:08:56:42 +0000] "POST /comments/create HTTP/1.1" 200 298 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
 ::ffff:127.0.0.1 - - [17/May/2020:08:57:21 +0000] "POST /comments/create HTTP/1.1" 200 298 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
+::ffff:127.0.0.1 - - [17/May/2020:08:59:04 +0000] "POST /comments/create HTTP/1.1" 200 301 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
