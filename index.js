@@ -27,7 +27,7 @@ const path = require('path');
 //************all the app.use i.e all middlewares are used when a request comes */
 app.use(cookieParser());
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:false}));
 console.log(env.name);
 if (env.name == 'development') {
     app.use(sassMiddleware({
