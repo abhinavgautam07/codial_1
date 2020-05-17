@@ -442,3 +442,13 @@
 ::1 - - [17/May/2020:08:56:42 +0000] "POST /comments/create HTTP/1.1" 200 298 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
 ::ffff:127.0.0.1 - - [17/May/2020:08:57:21 +0000] "POST /comments/create HTTP/1.1" 200 298 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
 ::ffff:127.0.0.1 - - [17/May/2020:08:59:04 +0000] "POST /comments/create HTTP/1.1" 200 301 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"
+[0mGET / [32m200 [0m4523.737 ms - 6601[0m
+[0mGET /users/sign-in [32m200 [0m102.781 ms - 2831[0m
+[0mGET /users/css/layout.css [33m404 [0m6.751 ms - 159[0m
+[0mGET /users/js/bg.js [33m404 [0m7.780 ms - 153[0m
+[0mGET /css/sin_up.css [33m404 [0m2018.450 ms - 153[0m
+[0mGET /users/images/favicon.ico [33m404 [0m9.284 ms - 163[0m
+[0mGET /users/js/bg.js [33m404 [0m8.508 ms - 153[0m
+[0mPOST /users/create-session [36m302 [0m114.921 ms - 46[0m
+[0mGET / [32m200 [0m54.904 ms - 9269[0m
+[0mPOST /comments/create [32m200 [0m976.244 ms - 335[0m
