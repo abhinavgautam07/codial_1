@@ -50,26 +50,35 @@ module.exports.home = async function (req, res) {
         }
     }
 
-
-    let posts = await Post.find({})
+    let users = await User.find({});
+    Post.find({})
       .sort('-createdAt')
       .populate('user')
       .populate({
         path: 'comments',
+        options:{
+          sort:{
+              'createdAt':-1
+          }
+      },
         populate: {
           path: 'user'
         }
-      });
+      }).exec(function(err,posts){
+
+        console.log(posts[0].comments[0]);
+        return res.render('home', {
+          title: "Codeial | Home",
+          posts: posts,
+          all_users: users,
+          friends: friends       
+      })
 
 
 
-    let users = await User.find({});
+    
 
-    return res.render('home', {
-      title: "Codeial | Home",
-      posts: posts,
-      all_users: users,
-      friends: friends                      //here friends are the friends of the current signed in user(if signed                                         in,otherwise friends is undefined ).if no friends it will be an empty                                        array                               
+                  //here friends are the friends of the current signed in user(if signed                                         in,otherwise friends is undefined ).if no friends it will be an empty                                        array                               
     });
 
 

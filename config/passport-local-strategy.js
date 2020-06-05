@@ -85,9 +85,10 @@ passport.setAuthenticatedUser = function(req, res, next) {
     if (req.isAuthenticated()) {
         //whenever a user is signed in its information is available in req.user from deserialize user and 
         //.user property is given by the passport to the request but the it has not been given to response
-        console.log("setting auth");
+       
         res.locals.user = req.user;
-
+         res.locals.user.password=null;
+        console.log("setting auth",res.locals.user.password);
     }
     return next();
 };

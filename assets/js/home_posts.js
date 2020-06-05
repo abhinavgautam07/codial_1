@@ -97,7 +97,7 @@
 
   //method to delete post
   let DeletePost = (deleteLink) => {
-
+console.log(deleteLink);
     $(deleteLink).click((event) => {
       event.preventDefault();
 

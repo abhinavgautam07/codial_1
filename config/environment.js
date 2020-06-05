@@ -62,5 +62,5 @@ const production = {
 
 }
 
-
-module.exports = development ;
+console.log("modeee",process.env.NODE_ENV);
+module.exports = eval(process.env.NODE_ENV) == undefined  ? development :eval(process.env.NODE_ENV);
